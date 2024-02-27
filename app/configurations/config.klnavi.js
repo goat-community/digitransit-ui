@@ -383,7 +383,7 @@ export default configMerger(walttiConfig, {
     title: APP_TITLE,
     titleAsHtml: APP_TITLE,
 
-    favicon: './app/configurations/images/klnavi/favicon.ico',
+    favicon: './app/configurations/images/klnavi/favicon.png',
 
     meta: {
         description: APP_DESCRIPTION,
