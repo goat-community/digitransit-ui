@@ -285,6 +285,7 @@ jobs:
         with:
           context: .
           tags: | 
+            ${{ steps.docker-meta.outputs.image }}:latest
             ${{ steps.docker-meta.outputs.image }}:${{ steps.docker-meta.outputs.permanent-tag }}
             ${{ steps.docker-meta.outputs.image }}:${{ steps.docker-meta.outputs.release-tag }}
           # https://github.com/docker/build-push-action/blob/9472e9021074a3cb3279ba431598b8836d40433f/docs/advanced/cache.md#github-cache
