@@ -32,10 +32,8 @@ export default configMerger(walttiConfig, {
         DATAHUB: process.env.DATAHUB_URL || 'https://datahub.bbnavi.de',
         OTP: process.env.OTP_URL || `${API_URL}/otp/routers/default/`,
         MAP: {
-            default: 'https://isk.geobasis-bb.de/mapproxy/webatlasde_topplus/service/wms',
-            osm: MAP_URL,
-            satellite: 'https://isk.geobasis-bb.de/mapproxy/dop20c_sentinel/service/wms',
-            satellite_eu: 'https://isk.geobasis-bb.de/mapproxy/dop20c_sentinel/service/wms?eu',
+            default: MAP_URL,
+            satellite: 'https://tiles.stadtnavi.eu/orthophoto/{z}/{x}/{y}.jpg',
             semiTransparent: SEMI_TRANSPARENT_MAP_URL,
             bicycle: 'https://tiles.stadtnavi.eu/bicycle/{z}/{x}/{y}{r}.png',
         },
@@ -480,7 +478,7 @@ export default configMerger(walttiConfig, {
 
     menu: {
         copyright: {
-            label: `© DigitalAgentur Brandenburg GmbH ${YEAR}`
+            label: `© Stadt Kaiserslautern ${YEAR}`
         },
         content: [
             {
