@@ -5,7 +5,7 @@ import { MapMode } from '../constants';
 const CONFIG = 'klnavi';
 const APP_TITLE = 'klnavi';
 const APP_DESCRIPTION = 'Mobilitätsplattform für die Stadt Kaiserslautern';
-const API_URL = process.env.API_URL || 'https://api.bbnavi.de';
+const API_URL = process.env.API_URL || 'https://api.klnavi.dev.plan4better.de';
 const DATAHUB_TILES_URL = process.env.DATAHUB_TILES_URL || 'https://tiles.bbnavi.de';
 const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
 const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.stadtnavi.eu/satellite-overlay/{z}/{x}/{y}{r}.png";
@@ -17,10 +17,10 @@ const STATIC_MESSAGE_URL =
 
 const walttiConfig = require('./config.waltti.js').default;
 
-const minLat = 52.015895;
-const maxLat = 54.015895;
-const minLon = 13.000255;
-const maxLon = 15.000255;
+const minLat = 49.350625;
+const maxLat = 49.531671;
+const minLon = 7.5500000;
+const maxLon = 8.0000000;
 
 export default configMerger(walttiConfig, {
     CONFIG,
@@ -433,14 +433,14 @@ export default configMerger(walttiConfig, {
     feedIds: ['bbnavi'],
 
     searchSources: ['oa', 'osm'],
-
+    
     searchParams: {
-        'boundary.rect.min_lat': 50.015895,
-        'boundary.rect.max_lat': 54.015895,
-        'boundary.rect.min_lon': 15.000255,
-        'boundary.rect.max_lon': 11.000255,
-        'focus.point.lat': 53.015895,
-        'focus.point.lon': 14.000255
+        'boundary.rect.min_lat': 49.350625,
+        'boundary.rect.max_lat': 49.531671,
+        'boundary.rect.min_lon': 7.5500000,
+        'boundary.rect.max_lon': 8.0000000,
+        'focus.point.lat': 49.441866,
+        'focus.point.lon': 7.770070
     },
 
     areaPolygon: [
@@ -456,8 +456,8 @@ export default configMerger(walttiConfig, {
     },
 
     defaultEndpoint: {
-        lat: 53.015895,
-        lon: 14.000255,
+        lat: 49.441866,
+        lon: 7.770070,
     },
 
 
@@ -465,14 +465,14 @@ export default configMerger(walttiConfig, {
         {
             icon: 'icon-icon_bus',
             label: 'Bahnhof',
-            lat: 53.015694,
-            lon: 13.996112,
+            lat: 49.441866,
+            lon: 7.770070,
         },
         {
             icon: 'icon-icon_star',
             label: 'Krankenhaus',
-            lat: 53.013128,
-            lon: 13.989340,
+            lat: 49.441866,
+            lon: 7.770070,
         }
     ],
 
