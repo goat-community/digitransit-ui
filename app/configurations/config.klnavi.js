@@ -3,7 +3,7 @@ import configMerger from '../util/configMerger';
 import { MapMode } from '../constants';
 
 const CONFIG = 'klnavi';
-const APP_TITLE = 'klnavi';
+const APP_TITLE = 'KLNavi';
 const APP_DESCRIPTION = 'Mobilitätsplattform für die Stadt Kaiserslautern';
 const API_URL = process.env.API_URL || 'https://api.klnavi.dev.plan4better.de';
 const DATAHUB_TILES_URL = process.env.DATAHUB_TILES_URL || 'https://tiles.bbnavi.de';
@@ -34,7 +34,7 @@ export default configMerger(walttiConfig, {
         MAP: {
             default: 'https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_farbe/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png',
             osm: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-            satellite: 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxpYXNwYWphcmVzIiwiYSI6ImNqOW1scnVyOTRxcWwzMm5yYWhta2N2cXcifQ.aDCgidtC9cjf_O75frn9lA',
+            // satellite: 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxpYXNwYWphcmVzIiwiYSI6ImNqOW1scnVyOTRxcWwzMm5yYWhta2N2cXcifQ.aDCgidtC9cjf_O75frn9lA',
             semiTransparent: SEMI_TRANSPARENT_MAP_URL,
             bicycle: 'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
         },
@@ -128,14 +128,14 @@ export default configMerger(walttiConfig, {
         description: APP_DESCRIPTION,
 
         image: {
-            url: '/img/bbnavi-social-preview.png',
-            width: 2048,
-            height: 1536,
+            url: '/img/stadtnavi-social-media-card.png',
+            width: 600,
+            height: 300,
         },
 
         twitter: {
             card: 'summary_large_image',
-            site: '@bbnavi_mobil',
+            site: '@herzlichdigital',
         },
     },
 
@@ -174,11 +174,6 @@ export default configMerger(walttiConfig, {
         messageId: 'map-type-streets',
         defaultMessage: 'Streets (LGB)',
         previewImage: '/img/maptype-streets-lgb.png',
-    }, {
-        mapMode: MapMode.Satellite,
-        messageId: 'map-type-satellite',
-        defaultMessage: 'Satellite',
-        previewImage: '/img/maptype-satellite.png',
     }, {
         mapMode: MapMode.Bicycle,
         messageId: 'map-type-bicycle',
@@ -393,7 +388,7 @@ export default configMerger(walttiConfig, {
     },
 
     logo: 'klnavi/herzlich_digital_logo.png',
-    logoSmall: 'bbnavi/herzlich_digital_logo.png',
+    logoSmall: 'klnavi/herzlich_digital_logo.png',
 
     GTMid: '',
 
@@ -431,7 +426,7 @@ export default configMerger(walttiConfig, {
         },
     },
 
-    feedIds: ['bbnavi'],
+    feedIds: ['klnavi'],
 
     searchSources: ['oa', 'osm'],
 
@@ -560,7 +555,7 @@ export default configMerger(walttiConfig, {
     redirectReittiopasParams: true,
 
     themeMap: {
-        bbnavi: 'bbnavi'
+        klnavi: 'klnavi'
     },
 
     transportModes: {
@@ -682,7 +677,7 @@ export default configMerger(walttiConfig, {
 
     showTicketInformation: false,
     showTicketPrice: false,
-    availableTickets: { 'bbnavi': {} },
+    availableTickets: { 'klnavi': {} },
     fareMapping: function mapFareId(fareId) {
         return {
             en: "Adult",
@@ -782,7 +777,7 @@ export default configMerger(walttiConfig, {
         mustConsent: true,
         translations: {
             de: {
-                privacyPolicyUrl: 'https://bbnavi.de/datenschutzerklaerung',
+                privacyPolicyUrl: 'https://klnavi.de/datenschutzerklaerung',
                 acceptSelected: 'Auswahl bestätigen',
                 consentModal: {
                     title: 'Cookies und Privatsphäre',
@@ -814,7 +809,7 @@ export default configMerger(walttiConfig, {
                 }
             },
             en: {
-                privacyPolicyUrl: 'https://bbnavi.de/datenschutzerklaerung',
+                privacyPolicyUrl: 'https://klnavi.de/datenschutzerklaerung',
                 acceptSelected: 'Confirm selection',
                 consentModal: {
                     title: 'Cookies and privacy',

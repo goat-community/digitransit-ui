@@ -798,6 +798,7 @@ export default {
     walttiOpas: 'waltti',
     herrenberg: '(hbnext|herrenberg|landstadtmobil|muensingen|engstingen)',
     bbnavi: 'bbnavi',
+    klnavi: 'klnavi',
     bw: 'bw',
     ludwigsburg: 'ludwigsburg',
   },
