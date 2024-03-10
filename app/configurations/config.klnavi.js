@@ -49,12 +49,10 @@ export default configMerger(walttiConfig, {
         CHARGING_STATIONS_MAP: 'https://ocpdb.bbnavi.de/tiles/{z}/{x}/{y}.mvt',
         CHARGING_STATION_DETAILS_API: 'https://ocpdb.bbnavi.de/api/ocpi/2.2/location/',
         PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
-        PELIAS_REVERSE_GEOCODER: `${
-            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
-        }/reverse`,
-        PELIAS_PLACE: `${
-            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
-        }/place`,
+        PELIAS_REVERSE_GEOCODER: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
+            }/reverse`,
+        PELIAS_PLACE: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
+            }/place`,
         FARES: '', // `${API_URL}/fares`,
         FONT: '' // Do not use Google fonts.
     },
@@ -110,14 +108,16 @@ export default configMerger(walttiConfig, {
     },
 
     colors: {
-        primary: '#DA1B1B',
+        primary: '#007CBD',
         iconColors: {
             'mode-bus': '#ff0000',
             'mode-car': '#007AC9',
             'mode-rail': '#008000',
+            'mode-metro': '#0065B0',
+            'mode-citybike': '#ff834a',
             'mode-charging-station': '#00b096',
             'mode-bike-park': '#005ab4',
-            'mode-carpool': '#DA1B1B',
+            'mode-carpool': '#9fc727'
         },
     },
 
@@ -289,7 +289,7 @@ export default configMerger(walttiConfig, {
                 },
                 visibleInSettingsUi: true,
                 enabled: true,
-            }, 
+            },
             'nextbike_ed': {
                 icon: 'nextbike',
                 name: {
@@ -392,8 +392,8 @@ export default configMerger(walttiConfig, {
         carpool: 'CARPOOL',
     },
 
-    logo: 'klnavi/kaiserslautern_logo.png',
-    logoSmall: 'bbnavi/stadtnavi-bbnavi-logo-red.svg',
+    logo: 'klnavi/herzlich_digital_logo.png',
+    logoSmall: 'bbnavi/herzlich_digital_logo.png',
 
     GTMid: '',
 
@@ -412,7 +412,7 @@ export default configMerger(walttiConfig, {
         showScaleBar: true, // DT-3470, DT-3397
         genericMarker: {
             popup: {
-                offset: [0,0],
+                offset: [0, 0],
                 maxWidth: 250,
                 minWidth: 250,
             }
@@ -434,7 +434,7 @@ export default configMerger(walttiConfig, {
     feedIds: ['bbnavi'],
 
     searchSources: ['oa', 'osm'],
-    
+
     searchParams: {
         'boundary.rect.min_lat': 49.350625,
         'boundary.rect.max_lat': 49.531671,
@@ -479,7 +479,7 @@ export default configMerger(walttiConfig, {
 
     menu: {
         copyright: {
-            label: `© Stadt Kaiserslautern ${YEAR}`
+            label: `© Herzlich Digital ${YEAR}`
         },
         content: [
             {
@@ -682,7 +682,7 @@ export default configMerger(walttiConfig, {
 
     showTicketInformation: false,
     showTicketPrice: false,
-    availableTickets: { 'bbnavi' : {}},
+    availableTickets: { 'bbnavi': {} },
     fareMapping: function mapFareId(fareId) {
         return {
             en: "Adult",
