@@ -4,6 +4,7 @@ import { MapMode } from '../constants';
 
 const CONFIG = 'klnavi';
 const APP_TITLE = 'KLNavi';
+const HEADER_TITLE = 'KLNavi';
 const APP_DESCRIPTION = 'Mobilitätsplattform für die Stadt Kaiserslautern';
 const API_URL = process.env.API_URL || 'https://api.klnavi.dev.plan4better.de';
 const DATAHUB_TILES_URL = process.env.DATAHUB_TILES_URL || 'https://tiles.bbnavi.de';
@@ -376,6 +377,7 @@ export default configMerger(walttiConfig, {
 
     title: APP_TITLE,
     titleAsHtml: APP_TITLE,
+    appBarTitle: HEADER_TITLE,
 
     favicon: './app/configurations/images/klnavi/favicon.png',
 
@@ -492,6 +494,16 @@ export default configMerger(walttiConfig, {
                 name: 'privacy',
                 nameEn: 'Privacy',
                 href: 'https://klnavi.de/datenschutzerklaerung',
+            },
+        ],
+        sponsorImages: [
+            {
+                url: '/img/BMDV_Fz_2021_Web2x_de.gif',
+                alt: 'Bundesministerium für Verkehr und digitale Infrastruktur',
+            },
+            {
+                url: '/img/DkV_Logo_Final.png',
+                alt: 'DKV Logo',
             },
         ],
     },

@@ -34,7 +34,7 @@ $bike-color: #005ab4;
 
 .top-bar section .logo {
   width: auto;
-  min-width: 11em;
+  min-width: 3em;
   float: left;
   color: white;
   // height: 62px;
@@ -159,4 +159,9 @@ $bike-color: #005ab4;
 
 .charging-station {
   color: #00b096;
+}
+
+.sponsor-images {
+  padding-top: 2em;
+  padding-bottom: 2em;
 }

@@ -119,6 +119,13 @@ function MainMenu(props, { config, intl, executeAction }) {
           <div className="text-light">{config.menu?.footer.footer}</div>
         </div>
       )}
+      {config.menu?.sponsorImages && (
+        <div className="sponsor-images">
+          {config.menu.sponsorImages.map(sponsor => (
+            <img key={sponsor.url} src={sponsor.url} alt={sponsor.alt} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
