@@ -230,53 +230,11 @@ export default configMerger(walttiConfig, {
         useSpacesAvailable: false,
         showCityBikes: true,
         networks: {
-            'flotte-berlin': {
-                icon: 'flotte-berlin',
-                name: {
-                    de: 'fLotte (Berlin)',
-                    en: 'fLotte (Berlin)',
-                },
-                type: 'citybike',
-                url: {
-                    de: 'https://flotte-berlin.de/',
-                    en: 'https://flotte-berlin.de/',
-                },
-                visibleInSettingsUi: true,
-                enabled: true,
-            },
-            'flotte-brandenburg': {
-                icon: 'flotte-brandenburg',
-                name: {
-                    de: 'fLotte (Brandenburg)',
-                    en: 'fLotte (Brandenburg)',
-                },
-                type: 'citybike',
-                url: {
-                    de: 'http://www.flotte-brandenburg.de/',
-                    en: 'http://www.flotte-brandenburg.de/',
-                },
-                visibleInSettingsUi: true,
-                enabled: true,
-            },
-            'flotte-potsdam': {
-                icon: 'flotte-potsdam',
-                name: {
-                    de: 'fLotte (Potsdam)',
-                    en: 'fLotte (Potsdam)',
-                },
-                type: 'citybike',
-                url: {
-                    de: 'https://flotte-potsdam.de/',
-                    en: 'https://flotte-potsdam.de/',
-                },
-                visibleInSettingsUi: true,
-                enabled: true,
-            },
-            'nextbike_bn': {
+            'nextbike_vn': {
                 icon: 'nextbike',
                 name: {
-                    de: 'Nextbike (Berlin)',
-                    en: 'Nextbike (Berlin)',
+                    de: 'Nextbike (VRN)',
+                    en: 'Nextbike (VRN)',
                 },
                 type: 'citybike',
                 url: {
@@ -285,91 +243,7 @@ export default configMerger(walttiConfig, {
                 },
                 visibleInSettingsUi: true,
                 enabled: true,
-            },
-            'nextbike_ed': {
-                icon: 'nextbike',
-                name: {
-                    de: 'Nextbike (Grünheide)',
-                    en: 'Nextbike (Grünheide)',
-                },
-                type: 'citybike',
-                url: {
-                    de: 'https://www.nextbike.de/de/standorte/',
-                    en: 'https://www.nextbike.de/en/standorte/',
-                },
-                visibleInSettingsUi: true,
-                enabled: true,
-            },
-            'nextbike_dc': {
-                icon: 'nextbike',
-                name: {
-                    de: 'Nextbike (Potsdam)',
-                    en: 'Nextbike (Potsdam)',
-                },
-                type: 'citybike',
-                url: {
-                    de: 'https://www.nextbike.de/de/standorte/',
-                    en: 'https://www.nextbike.de/en/standorte/',
-                },
-                visibleInSettingsUi: true,
-                enabled: true,
-            },
-            'barshare-bike': {
-                icon: 'barshare-bike',
-                name: {
-                    de: 'BARshare E-Bike',
-                    en: 'BARshare E-Bike',
-                },
-                type: 'citybike',
-                url: {
-                    de: 'https://www.barshare.de/barshare-standorte',
-                    en: 'https://www.barshare.de/barshare-standorte',
-                },
-                visibleInSettingsUi: true,
-                enabled: true,
-            },
-            'barshare-car': {
-                icon: 'car-sharing',
-                name: {
-                    de: 'BARshare Car',
-                    en: 'BARshare Car',
-                },
-                type: 'car-sharing',
-                url: {
-                    de: 'https://www.barshare.de/barshare-standorte',
-                    en: 'https://www.barshare.de/barshare-standorte',
-                },
-                visibleInSettingsUi: true,
-                enabled: true,
-            },
-            'barshare-other': {
-                icon: 'barshare-cargobike',
-                name: {
-                    de: 'BARshare Lastenrad',
-                    en: 'BARshare cargo bike',
-                },
-                type: 'cargo-bike',
-                url: {
-                    de: 'https://www.barshare.de/barshare-standorte',
-                    en: 'https://www.barshare.de/barshare-standorte',
-                },
-                visibleInSettingsUi: true,
-                enabled: true,
-            },
-            'donkey_berlin': {
-                icon: 'donkeyrepublic',
-                name: {
-                    de: 'Donkey Republic',
-                    en: 'Donkey Republic',
-                },
-                type: 'citybike',
-                url: {
-                    de: 'https://www.donkey.bike/de/stadte/fahrradverleih-berlin/',
-                    en: 'https://www.donkey.bike/cities/bike-rental-berlin/',
-                },
-                visibleInSettingsUi: true,
-                enabled: true,
-            },
+            }
         }
     },
 
