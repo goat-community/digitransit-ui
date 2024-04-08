@@ -162,8 +162,14 @@ $bike-color: #005ab4;
 }
 
 .sponsor-images {
-  padding-top: 2em;
+  padding-top: 0em;
   padding-bottom: 2em;
+}
+
+.sponsor-images-text {
+  font-weight: normal;
+  cursor: default !important;
+  color: black;
 }
 
 .sponsor-images img {

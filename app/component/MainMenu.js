@@ -110,9 +110,6 @@ function MainMenu(props, { config, intl, executeAction }) {
           )}
         />
       </section>
-      {config.menu?.copyright && (
-        <div className="copyright">{config.menu.copyright.label}</div>
-      )}
       {config.menu?.footer && (
         <div>
           <div className="text-light">{config.menu?.footer.body}</div>
@@ -122,9 +119,37 @@ function MainMenu(props, { config, intl, executeAction }) {
       {config.menu?.sponsorImages && (
         <div className="sponsor-images">
           {config.menu.sponsorImages.map(sponsor => (
-            <img key={sponsor.url} src={sponsor.url} alt={sponsor.alt} />
+            <img
+              key={sponsor.url}
+              src={sponsor.url}
+              alt={sponsor.alt}
+              width={sponsor.width || undefined}
+              height={sponsor.height || undefined}
+            />
           ))}
         </div>
+      )}
+      <div className="sponsor-images-text">
+        {intl.formatMessage({
+          id: 'maintained-by',
+          defaultMessage: 'Maintained by',
+        })}
+      </div>
+      {config.menu?.maintainedBy && (
+        <div className="sponsor-images">
+          {config.menu.maintainedBy.map(sponsor => (
+            <img
+              key={sponsor.url}
+              src={sponsor.url}
+              alt={sponsor.alt}
+              width={sponsor.width || undefined}
+              height={sponsor.height || undefined}
+            />
+          ))}
+        </div>
+      )}
+      {config.menu?.copyright && (
+        <div className="copyright">{config.menu.copyright.label}</div>
       )}
     </div>
   );

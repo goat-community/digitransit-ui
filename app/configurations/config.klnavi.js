@@ -381,11 +381,19 @@ export default configMerger(walttiConfig, {
                 url: '/img/DkV_Logo_Final.png',
                 alt: 'DKV Logo',
             },
+
+        ],
+        maintainedBy: [
             {
                 url: '/img/kaiserslautern_logo_red.png',
                 alt: 'Kaiserslautern Stadt'
             },
-        ],
+            {
+                url: '/img/Logo-Herzlich-Digital-770x770.png',
+                alt: 'Herzlich Digital',
+                height: "130px"
+            }            
+        ]
     },
 
     aboutThisService: {
