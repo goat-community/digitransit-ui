@@ -132,13 +132,11 @@ export default configMerger(walttiConfig, {
     socialMedia: {
         title: APP_TITLE,
         description: APP_DESCRIPTION,
-
         image: {
-            url: '/img/stadtnavi-social-media-card.png',
+            url: '/img/klnavi-social-media.png',
             width: 600,
             height: 300,
         },
-
         twitter: {
             card: 'summary_large_image',
             site: '@herzlichdigital',
