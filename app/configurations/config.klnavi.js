@@ -18,10 +18,15 @@ const STATIC_MESSAGE_URL =
 
 const walttiConfig = require('./config.waltti.js').default;
 
-const minLat = 49.350625;
-const maxLat = 49.531671;
-const minLon = 7.5500000;
-const maxLon = 8.0000000;
+
+const minLat = 48.966571;
+const maxLat = 49.900007;
+const minLon = 7.2464377;
+const maxLon = 10.161698;
+// Center
+const focusLat = 49.441866;
+const focusLon = 7.770070;
+
 
 export default configMerger(walttiConfig, {
     CONFIG,
@@ -305,14 +310,13 @@ export default configMerger(walttiConfig, {
     feedIds: ['klnavi'],
 
     searchSources: ['oa', 'osm'],
-
     searchParams: {
-        'boundary.rect.min_lat': 49.350625,
-        'boundary.rect.max_lat': 49.531671,
-        'boundary.rect.min_lon': 7.5500000,
-        'boundary.rect.max_lon': 8.0000000,
-        'focus.point.lat': 49.441866,
-        'focus.point.lon': 7.770070
+        'boundary.rect.min_lat': minLat,
+        'boundary.rect.max_lat': maxLat,
+        'boundary.rect.min_lon': minLon,
+        'boundary.rect.max_lon': maxLon,
+        'focus.point.lat': focusLat,
+        'focus.point.lon': focusLon,
     },
 
     areaPolygon: [
@@ -328,8 +332,8 @@ export default configMerger(walttiConfig, {
     },
 
     defaultEndpoint: {
-        lat: 49.441866,
-        lon: 7.770070,
+        lat: focusLat,
+        lon: focusLon,
     },
 
 
@@ -378,6 +382,10 @@ export default configMerger(walttiConfig, {
             {
                 url: '/img/DkV_Logo_Final.png',
                 alt: 'DKV Logo',
+            },
+            {
+                url: '/img/kaiserslautern_logo_red.png',
+                alt: 'Kaiserslautern Stadt'
             },
         ],
     },
