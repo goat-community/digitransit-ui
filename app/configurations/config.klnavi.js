@@ -597,51 +597,23 @@ export default configMerger(walttiConfig, {
     geoJson: {
         layers: [
             // TMB Geo Daten der POIs aus der Kategorie 15 (Fahrradvermietung/-service)
-            // {
-            //     name: {
-            //         en: 'Tourismus-Marketing Brandenburg',
-            //         de: 'Tourismus-Marketing Brandenburg',
-            //     },
-            //     url: 'https://datahub.bbnavi.de/export/point_of_interests/15.geojson'
-            // },
-            // bicycleinfrastructure includes shops, repair stations,
-            // {
-            //     name: {
-            //         fi: '',
-            //         en: 'Service stations and stores',
-            //         de: "Service Stationen und Läden",
-            //     },
-            //     url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
-            // },
-            /* Charging stations
             {
                 name: {
-                    fi: '',
-                    en: 'Charging stations',
-                    de: 'Ladestationen',
+                    en: 'VRN Mask',
+                    de: 'VRN Mask',
                 },
-                url: '/assets/geojson/hb-layers/charging.geojson',
-            },*/
-            // LoRaWan map layer
-            // {
-            //     name: {
-            //         fi: '',
-            //         en: 'LoRaWAN Gateways',
-            //         de: 'LoRaWAN Gateways',
-            //     },
-            //     url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
-            //     isOffByDefault: true,
-            // },
-            // Nette Toilette layer
-            // {
-            //     name: {
-            //         fi: '',
-            //         en: 'Public Toilets',
-            //         de: 'Nette Toilette',
-            //     },
-            //     url: '/assets/geojson/hb-layers/toilet.geojson',
-            //     isOffByDefault: true,
-            // },
+                url: '/assets/geojson/vrn_mask.geojson',
+                isOffByDefault: false,
+            },
+            {
+                name: {
+                    en: 'Kaiserslautern',
+                    de: 'Kaiserslautern',
+                },
+                url: '/assets/geojson/klnavi_boundary.geojson',
+                isOffByDefault: false,
+            },
+ 
         ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,
