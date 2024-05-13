@@ -392,7 +392,7 @@ export default configMerger(walttiConfig, {
                 url: '/img/Logo-Herzlich-Digital-770x770.png',
                 alt: 'Herzlich Digital',
                 height: "130px"
-            }            
+            }
         ]
     },
 
@@ -401,16 +401,16 @@ export default configMerger(walttiConfig, {
             {
                 header: 'Über dieses Angebot',
                 paragraphs: [
-                    'bbnavi ist eine Mobilitätsplattform für Brandenburg. Die Projektpartner:innen und die beteiligten Kommunen bündeln hier Daten zu ÖPNV, Fußwegen, Radverkehr, Straßen- und Parkplätzen  Ladeinfrastruktur und Sharing-Angeboten. Die Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt.',
+                    'KL.Navi ist eine Mobilitätsplattform für die Stadt Kaiserslautern. Die Projektpartner:innen und die beteiligten Kommunen bündeln hier Daten zu ÖPNV, Fußwegen, Radverkehr, Straßen- und Parkplätzen  Ladeinfrastruktur und Sharing-Angeboten. Die Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt. Ein besonderer Fokus der Plattform ist das Routing für Personen mit eingeschränkter Mobilität, hierfür werden unter anderem Daten der Stadt Kaiserslautern und aus OSM verwendet.',
                 ],
             },
             {
                 header: 'Mitmachen',
                 paragraphs: [
-                    'Sie betreiben ein Mobilitätsangebot ein Brandenburg und haben es noch nicht in bbnavi gefunden? Dann freuen wir uns über Ihre Nachricht. Statistische und Echtzeit-Informationen, die als offene Daten vorliegen, binden wir gerne ein.',
-                    'Sie nutzen ein Mobilitätsangebot in Brandenburg (z.B. einen Bürgerbus oder ein Fahrrad- oder Carsharing-Angebot) und finden es nicht in bbnavi? Dann freuen wir uns über Ihre Hinweise und gucken dann, ob wir es in bbnavi einbinden können.',
+                    'Sie betreiben ein Mobilitätsangebot in Kaiserslautern und haben es noch nicht in KL.Navi gefunden? Dann freuen wir uns über Ihre Nachricht. Statistische und Echtzeit-Informationen, die als offene Daten vorliegen, binden wir gerne ein.',
+                    'Sie nutzen ein Mobilitätsangebot in Brandenburg (z.B. einen Bürgerbus oder ein Fahrrad- oder Carsharing-Angebot) und finden es nicht in KL.Navi? Dann freuen wir uns über Ihre Hinweise und gucken dann, ob wir es in KL.Navi einbinden können.',
                     'Sie möchten zum Mitmacher werden und wünschen mehr Informationen?',
-                    'Schreiben Sie uns eine E-mail an bbnavi@digital-agentur.de',
+                    'Schreiben Sie uns eine E-mail an vorname.nachname@kaiserslautern.de',
                 ]
             },
             {
@@ -424,7 +424,7 @@ export default configMerger(walttiConfig, {
                 header: 'Datenquellen',
                 paragraphs: [
                     'Kartendaten: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
-                    'ÖPNV-Daten: Datensätze der <a target=new href=https://www.vbb.de/vbb-services/api-open-data/datensaetze/>VBB GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
+                    'ÖPNV-Daten: Datensätze der <a target=new href=https://www.vrn.de/opendata/datasets>Verkehrsverbund Rhein-Neckar GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
                     'Alle Angaben ohne Gewähr.'
                 ],
             },
@@ -433,20 +433,30 @@ export default configMerger(walttiConfig, {
             {
                 header: 'About this service',
                 paragraphs: [
-                    'bbnavi is a travel planning application for the state of Brandenburg. This service includes public transport, footpaths, cycling, street and parking information, charging infrastructure and sharing offerings. The mobility offerings are connected through intermodal routing.',
+                    'KL.Navi is a mobility platform for the city of Kaiserslautern. This project brings together partners and local municipalities to consolidate data on public transport, walking paths, cycling, street and parking information, charging infrastructure, and sharing services. The mobility offerings are connected through intermodal routing. A special focus of the platform is on routing for individuals with limited mobility, utilizing data from the city of Kaiserslautern and OpenStreetMap (OSM).',
                 ],
             },
             {
-                header: 'Open Source Software',
+                header: 'Get Involved',
                 paragraphs: [
-                    'bbnavi is based on the Digitransit service platform is an open source routing platform developed by HSL and Traficom. It builds on OpenTripPlanner by Conveyal. Enhancements by Transportkollektiv and MITFAHR|DE|ZENTRALE. All software is open source. Thanks to everybody working on this!',
+                    'Do you operate a mobility service in Kaiserslautern and cannot find it on KL.Navi? We welcome your input. We are keen to integrate both statistical and real-time information available as open data.',
+                    'Are you using a mobility service in Brandenburg (e.g., a citizen bus or a bike or car sharing service) and cannot find it on KL.Navi? We appreciate your feedback and will look into incorporating it into KL.Navi.',
+                    'Want to become a contributor and need more information?',
+                    'Email us at firstname.lastname@kaiserslautern.de',
+                ]
+            },
+            {
+                header: 'Digitransit Platform',
+                paragraphs: [
+                    'This service is based on stadtnavi.de, a project by the city of Herrenberg in Baden-Württemberg. The foundation of stadtnavi includes the international open-source projects Digitransit and OpenTripPlanner. All software is available under open licenses. Thanks to all contributors.',
+                    'The entire source code for the platform, which consists of many different components, is available on Github.'
                 ],
             },
             {
                 header: 'Data sources',
                 paragraphs: [
-                    'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
-                    'Public transit data: Datasets by <a target=new href=https://www.vbb.de/vbb-services/api-open-data/datensaetze/>VBB GmbH</a>, Shapes enhanced with OpenStreetMap data © OpenStreetMap contributors',
+                    'Map data: © OpenStreetMap contributors',
+                    'Public transit data: Datasets by VBB GmbH, enhanced with OpenStreetMap data © OpenStreetMap contributors',
                     'No responsibility is accepted for the accuracy of this information.'
                 ],
             },
@@ -613,7 +623,7 @@ export default configMerger(walttiConfig, {
                 url: '/assets/geojson/klnavi_boundary.geojson',
                 isOffByDefault: false,
             },
- 
+
         ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,
@@ -649,7 +659,7 @@ export default configMerger(walttiConfig, {
         mustConsent: true,
         translations: {
             de: {
-                privacyPolicyUrl: 'https://klnavi.de/datenschutzerklaerung',
+                privacyPolicyUrl: 'https://www.herzlich-digital.de/datenschutz',
                 acceptSelected: 'Auswahl bestätigen',
                 consentModal: {
                     title: 'Cookies und Privatsphäre',
@@ -681,7 +691,7 @@ export default configMerger(walttiConfig, {
                 }
             },
             en: {
-                privacyPolicyUrl: 'https://klnavi.de/datenschutzerklaerung',
+                privacyPolicyUrl: 'https://www.herzlich-digital.de/datenschutz',
                 acceptSelected: 'Confirm selection',
                 consentModal: {
                     title: 'Cookies and privacy',
