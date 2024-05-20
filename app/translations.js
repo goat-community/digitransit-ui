@@ -5310,6 +5310,14 @@ const translations = {
     'zone-info': 'Zon {zone}',
     'zone-unknown': 'Okänd zon',
     zones: 'Biljettzoner',
+    'routing-profile': 'Routing-Profil',
+    'default': 'Standard',
+    'wheelchair': 'Rollstuhl',
+    'rollator': 'Rollator',
+    'slight-walking-disability': 'Leichtes Gehbehinderung',
+    'moderate-walking-disability': 'Mittlere Gehbehinderung',
+    'severe-walking-disability': 'Schwere Gehbehinderung',
+    'stroller': 'Kinderwagen'
   },
 
  pl: {
