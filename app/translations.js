@@ -259,6 +259,14 @@ const translations = {
     'weather-at-destination': 'Vejret på destinationen',
     yesterday: 'I går',
     zones: 'Zoner',
+    'routing-profile': 'Routing profile',
+    'default': 'Standard',
+    'wheelchair': 'Kørestol',
+    'rollator': 'Rollator',
+    'slight-walking-disability': 'Lidt gangbesvær',
+    'moderate-walking-disability': 'Moderat gangbesvær',
+    'severe-walking-disability': 'Alvorligt gangbesvær',
+    'stroller': 'Barnevogn',
   },
 
   de: {
@@ -1245,7 +1253,15 @@ const translations = {
     yesterday: 'Gestern',
     zone: 'Tarifzone',
     zones: 'Tarifzonen',
-    'book-on-demand-taxi': 'Fahrt buchen'
+    'book-on-demand-taxi': 'Fahrt buchen',
+    'routing-profile': 'Routing-Profil',
+    'default': 'Standard',
+    'wheelchair': 'Rollstuhl',
+    'rollator': 'Rollator',
+    'slight-walking-disability': 'Leichtes Gehbehinderung',
+    'moderate-walking-disability': 'Mittlere Gehbehinderung',
+    'severe-walking-disability': 'Schwere Gehbehinderung',
+    'stroller': 'Kinderwagen'
   },
 
   en: {
@@ -2218,6 +2234,14 @@ const translations = {
     'zone-info': 'Zone {zone}',
     'zone-unknown': 'Unknown zone',
     zones: 'Fare zones',
+    'routing-profile': 'Routing profile',
+    'default': 'Default',
+    'wheelchair': 'Wheelchair',
+    'rollator': 'Rollator',
+    'slight-walking-disability': 'Slight walking disability',
+    'moderate-walking-disability': 'Moderate walking disability',
+    'severe-walking-disability': 'Severe walking disability',
+    'stroller': 'Stroller',
   },
 
   es: {
@@ -3348,6 +3372,14 @@ const translations = {
     'zone-info': 'Vyöhyke {zone}',
     'zone-unknown': 'Tuntematon vyöhyke',
     zones: 'Lippuvyöhykkeet',
+    'routing-profile': 'Reitin tyyppi',
+    'default': 'Default',
+    'wheelchair': 'Pyörätuoli',
+    'rollator': 'Rollator',
+    'slight-walking-disability': 'Slight walking disability',
+    'moderate-walking-disability': 'Moderate walking disability',
+    'severe-walking-disability': 'Severe walking disability',
+    'stroller': 'Stroller',
   },
 
   fr: {
@@ -3689,6 +3721,14 @@ const translations = {
     'weather-at-destination': 'Météo à destination',
     yesterday: 'Hier',
     zones: 'Zones tarifaires',
+    'routing-profile': 'Routing profile',
+    'default': 'Default',
+    'wheelchair': 'Fauteuil roulant',
+    'rollator': 'Rollator',
+    'slight-walking-disability': 'Slight walking disability',
+    'moderate-walking-disability': 'Moderate walking disability',
+    'severe-walking-disability': 'Severe walking disability',
+    'stroller': 'Stroller',
   },
 
   nb: {
@@ -6015,6 +6055,14 @@ const translations = {
     'cycling-map-legend-bike-lane': 'Ścieżka rowerowa',
     'cycling-map-legend-major-cycling-route': 'Ścieżka rowerowa ogólnokrajowy',
     'cycling-map-legend-local-cycling-route': 'Ścieżka rowerowa lokalny',
+    'routing-profile': 'Profil trasy',
+    'default': 'Default',
+    'wheelchair': 'Wózek inwalidzki',
+    'rollator': 'Rollator',
+    'slight-walking-disability': 'Lekkie upośledzenie chodzenia',
+    'moderate-walking-disability': 'Umiarkowana niepełnosprawność ruchowa',
+    'severe-walking-disability': 'Ciężkie upośledzenie chodzenia',
+    'stroller': 'Wózek',
 }};
 
 export default translations;

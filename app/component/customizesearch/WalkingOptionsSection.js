@@ -5,7 +5,7 @@ import { saveRoutingSettings } from '../../action/SearchSettingsActions';
 
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
 import SearchSettingsDropdown, {
-  getThreeStepOptions,
+  getStepOptionsNumerical,
 } from './SearchSettingsDropdown';
 import Toggle from './Toggle';
 import { findNearestOption } from '../../util/planParamUtil';
@@ -13,7 +13,7 @@ import { findNearestOption } from '../../util/planParamUtil';
 const WalkingOptionsSection = (
   { currentSettings, defaultSettings, walkSpeedOptions, walkReluctanceOptions },
   { intl, executeAction },
-  options = getThreeStepOptions(walkSpeedOptions),
+  options = getStepOptionsNumerical(walkSpeedOptions),
   currentSelection = options.find(
     option => option.value === currentSettings.walkSpeed,
   ) ||
@@ -38,6 +38,7 @@ const WalkingOptionsSection = (
         });
       }}
       options={options}
+      translateLabels={false}
       labelText={intl.formatMessage({ id: 'walking-speed' })}
       highlightDefaulValue
       formatOptions

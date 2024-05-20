@@ -108,6 +108,16 @@ export const BicycleParkingFilter = {
   SecurePreferred: 'securePreferred',
 };
 
+export const RoutingProfileOptions = {
+  Standard: 'default',
+  Wheelchair: 'wheelchair',
+  Rollator: 'rollator',
+  SlightWalkingDisability: 'slight-walking-disability',
+  ModerateWalkingDisability: 'moderate-walking-disability',
+  SevereWalkingDisability: 'severe-walking-disability',
+  Stroller: 'stroller',
+};
+
 export const ExtendedRouteTypes = Object.freeze({
   BusExpress: 702,
   BusLocal: 704,

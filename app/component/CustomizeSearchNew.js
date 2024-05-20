@@ -11,10 +11,16 @@ import WalkingOptionsSection from './customizesearch/WalkingOptionsSection';
 import AccessibilityOptionSection from './customizesearch/AccessibilityOptionSection';
 import TransferOptionsSection from './customizesearch/TransferOptionsSection';
 import CityBikeNetworkSelector from './customizesearch/CityBikeNetworkSelector';
-import { showModeSettings, useCitybikes } from '../util/modeUtils';
+import {
+  accessibilityDisabled,
+  bikeDisabledProfiles,
+  showModeSettings,
+  useCitybikes,
+} from '../util/modeUtils';
 import ScrollableWrapper from './ScrollableWrapper';
 import { getDefaultSettings } from '../util/planParamUtil';
 import { getCitybikeNetworks } from '../util/citybikes';
+import RoutingProfileOptionsSection from './customizesearch/RoutingProfileSection';
 
 class CustomizeSearch extends React.Component {
   static contextTypes = {
@@ -89,7 +95,11 @@ class CustomizeSearch extends React.Component {
             })}
           </h2>
         </div>
+
         <ScrollableWrapper>
+          <div className="settings-section">
+            <RoutingProfileOptionsSection currentSettings={currentSettings} />
+          </div>
           <div className="settings-section compact-settings-section">
             <WalkingOptionsSection
               walkSpeedOptions={config.defaultOptions.walkSpeed}
@@ -112,28 +122,29 @@ class CustomizeSearch extends React.Component {
               />
             </div>
           </div>
-          {useCitybikes(config?.cityBike?.networks) && (
-            <div className="settings-section">
-              <div className="settings-option-container">
-                <fieldset>
-                  <legend className="settings-header transport-mode-subheader">
-                    <FormattedMessage
-                      id="citybike-network-header"
-                      defaultMessage={intl.formatMessage({
-                        id: 'citybike-network-headers',
-                        defaultMessage: 'Citybikes and scooters',
-                      })}
-                    />
-                  </legend>
-                  <div className="transport-modes-container">
-                    <CityBikeNetworkSelector
-                      currentOptions={getCitybikeNetworks(config)}
-                    />
-                  </div>
-                </fieldset>
+          {useCitybikes(config?.cityBike?.networks) &&
+            !bikeDisabledProfiles.includes(currentSettings.routingProfile) && (
+              <div className="settings-section">
+                <div className="settings-option-container">
+                  <fieldset>
+                    <legend className="settings-header transport-mode-subheader">
+                      <FormattedMessage
+                        id="citybike-network-header"
+                        defaultMessage={intl.formatMessage({
+                          id: 'citybike-network-headers',
+                          defaultMessage: 'Citybikes and scooters',
+                        })}
+                      />
+                    </legend>
+                    <div className="transport-modes-container">
+                      <CityBikeNetworkSelector
+                        currentOptions={getCitybikeNetworks(config)}
+                      />
+                    </div>
+                  </fieldset>
+                </div>
               </div>
-            </div>
-          )}
+            )}
           <div className="settings-section">
             <div className="settings-option-container">
               <StreetModeSelectorPanel
@@ -142,11 +153,13 @@ class CustomizeSearch extends React.Component {
               />
             </div>
           </div>
-          <div className="settings-section">
-            <div className="settings-option-container">
-              <AccessibilityOptionSection currentSettings={currentSettings} />
+          {!accessibilityDisabled.includes(currentSettings.routingProfile) && (
+            <div className="settings-section">
+              <div className="settings-option-container">
+                <AccessibilityOptionSection currentSettings={currentSettings} />
+              </div>
             </div>
-          </div>
+          )}
           {config.showTicketSelector && (
             <div className="settings-section">
               <FareZoneSelector

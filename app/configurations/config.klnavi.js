@@ -77,42 +77,75 @@ export default configMerger(walttiConfig, {
     /* disable the "next" column of the Route panel as it can be confusing sometimes: https://github.com/stadtnavi/digitransit-ui/issues/167 */
     displayNextDeparture: false,
     maxWalkDistance: 15000,
-
     optimize: "TRIANGLE",
-
     defaultSettings: {
         optimize: "TRIANGLE",
         safetyFactor: 0.4,
         slopeFactor: 0.3,
         timeFactor: 0.3,
-
         includeParkAndRideSuggestions: true,
         includeCarSuggestions: true,
     },
+    routingProfilesDefaultSettings: {
+        default: {
+            walkSpeed: 1.4,
+            accessibilityOption: false,
+            includeBikeSuggestions: true,
+            showBikeAndParkItineraries: true,
+        },
+        wheelchair: {
+            walkSpeed: 1.4,
+            accessibilityOption: true,
+            includeBikeSuggestions: false,
+            showBikeAndParkItineraries: false,
+        },
+        stroller: {
+            walkSpeed: 1.4,
+            accessibilityOption: true,
+            includeBikeSuggestions: false,
+            showBikeAndParkItineraries: false,
+        },
+        rollator: {
+            walkSpeed: 0.6,
+            accessibilityOption: false,
+            includeBikeSuggestions: false,
+            showBikeAndParkItineraries: false,
+        },
+        'slight-walking-disability': {
+            walkSpeed: 0.8,
+            accessibilityOption: false,
+            includeBikeSuggestions: true,
+        },
+        'moderate-walking-disability': {
+            walkSpeed: 0.4,
+            accessibilityOption: false,
+            includeBikeSuggestions: true,
+        },
+        'severe-walking-disability': {
+            walkSpeed: 0.2,
+            accessibilityOption: false,
+            includeBikeSuggestions: false,
+            showBikeAndParkItineraries: false,
+        },
+    },
     // TODO shouldn't boolean be reversed? See https://github.com/HSLdevcom/digitransit-ui/pull/4648#discussion_r1121671721 
     separatedParkAndRideSwitch: false,
-
     defaultOptions: {
-        walkSpeed: [0.83, 1.38, 1.94],
+        walkSpeed: [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2],
     },
-
     itinerary: {
         delayThreshold: 60,
     },
-
     modesWithNoBike: ['BICYCLE_RENT', 'WALK', 'CARPOOL', 'FLEX_DIRECT', 'FLEX_ACCESS', 'FLEX_EGRESS'],
-
     appBarLink: {
         name: 'Feedback',
         href: 'https://klnavi.de/feedback',
         target: '_blank'
     },
-
     contactName: {
         de: 'transportkollektiv',
         default: 'transportkollektiv',
     },
-
     colors: {
         primary: '#007CBD',
         iconColors: {

@@ -6,6 +6,7 @@ import Icon from '../Icon';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
 import BikingOptionsSection from './BikingOptionsSection';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
+import { bikeDisabledProfiles } from '../../util/modeUtils';
 
 const StreetModeSelectorPanel = (
   { currentSettings, defaultSettings },
@@ -41,66 +42,70 @@ const StreetModeSelectorPanel = (
             defaultMessage="Your own transportation modes"
           />
         </div>
-        <div key="mode-option-bicycle">
-          <div className="mode-option-container">
-            <div className="mode-option-block">
-              <div className="mode-icon">
-                <Icon className="bicycle-icon" img="icon-icon_bike" />
-              </div>
-              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-              <label className="mode-name" htmlFor="settings-toggle-bicycle">
-                <FormattedMessage
-                  className="mode-name"
-                  id="bicycle"
-                  defaultMessage="bicycle"
-                />
-                <Toggle
-                  id="settings-toggle-bicycle"
-                  toggled={currentSettings.includeBikeSuggestions}
-                  onToggle={() => onToggle('includeBikeSuggestions', 'OwnBike')}
-                />
-              </label>
-            </div>
-          </div>
-          {!config.includePublicWithBikePlan ||
-          currentSettings.includeBikeSuggestions ? (
-            <BikingOptionsSection
-              bikeSpeed={currentSettings.bikeSpeed}
-              bicycleParkingFilter={currentSettings.bicycleParkingFilter}
-              defaultSettings={defaultSettings}
-              bikeSpeedOptions={config.defaultOptions.bikeSpeed}
-              overrideStyle={overrideStyle}
-            />
-          ) : null}
-          {config.showBikeAndParkItineraries &&
-          !config.includePublicWithBikePlan ? (
-            <div className="settings-mode-option-container">
-              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-              <label
-                className="settings-mode-option-label"
-                htmlFor="settings-toggle-bikeAndPark"
-              >
-                <p className="settings-mode-option-label-text">
+        {!bikeDisabledProfiles.includes(currentSettings.routingProfile) && (
+          <div key="mode-option-bicycle">
+            <div className="mode-option-container">
+              <div className="mode-option-block">
+                <div className="mode-icon">
+                  <Icon className="bicycle-icon" img="icon-icon_bike" />
+                </div>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                <label className="mode-name" htmlFor="settings-toggle-bicycle">
                   <FormattedMessage
                     className="mode-name"
-                    id="bike-and-ride"
-                    defaultMessage="Bike and ride"
+                    id="bicycle"
+                    defaultMessage="bicycle"
                   />
-                </p>
-                <span className="settings-mode-option-label-text-container">
-                  <p className="settings-mode-option-label-value" />
                   <Toggle
-                    id="settings-toggle-bikeAndPark"
-                    toggled={currentSettings.showBikeAndParkItineraries}
+                    id="settings-toggle-bicycle"
+                    toggled={currentSettings.includeBikeSuggestions}
                     onToggle={() =>
-                      onToggle('showBikeAndParkItineraries', 'BikeAndPark')
+                      onToggle('includeBikeSuggestions', 'OwnBike')
                     }
                   />
-                </span>
-              </label>
+                </label>
+              </div>
             </div>
-          ) : null}
-        </div>
+            {!config.includePublicWithBikePlan ||
+            currentSettings.includeBikeSuggestions ? (
+              <BikingOptionsSection
+                bikeSpeed={currentSettings.bikeSpeed}
+                bicycleParkingFilter={currentSettings.bicycleParkingFilter}
+                defaultSettings={defaultSettings}
+                bikeSpeedOptions={config.defaultOptions.bikeSpeed}
+                overrideStyle={overrideStyle}
+              />
+            ) : null}
+            {config.showBikeAndParkItineraries &&
+            !config.includePublicWithBikePlan ? (
+              <div className="settings-mode-option-container">
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                <label
+                  className="settings-mode-option-label"
+                  htmlFor="settings-toggle-bikeAndPark"
+                >
+                  <p className="settings-mode-option-label-text">
+                    <FormattedMessage
+                      className="mode-name"
+                      id="bike-and-ride"
+                      defaultMessage="Bike and ride"
+                    />
+                  </p>
+                  <span className="settings-mode-option-label-text-container">
+                    <p className="settings-mode-option-label-value" />
+                    <Toggle
+                      id="settings-toggle-bikeAndPark"
+                      toggled={currentSettings.showBikeAndParkItineraries}
+                      onToggle={() =>
+                        onToggle('showBikeAndParkItineraries', 'BikeAndPark')
+                      }
+                    />
+                  </span>
+                </label>
+              </div>
+            ) : null}
+          </div>
+        )}
         {config.includeParkAndRideSuggestions &&
           !config.separatedParkAndRideSwitch && (
             <div key="mode-option-park-and-ride">

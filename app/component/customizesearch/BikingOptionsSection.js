@@ -5,7 +5,7 @@ import { intlShape } from 'react-intl';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
 
 import SearchSettingsDropdown, {
-  getFiveStepOptionsNumerical,
+  getStepOptionsNumerical,
   valueShape,
 } from './SearchSettingsDropdown';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
@@ -17,7 +17,7 @@ class BikingOptionsSection extends React.Component {
   render() {
     const { defaultSettings, bikeSpeed, overrideStyle } = this.props;
     const { intl } = this.context;
-    const options = getFiveStepOptionsNumerical(this.props.bikeSpeedOptions);
+    const options = getStepOptionsNumerical(this.props.bikeSpeedOptions);
 
     const parkingOptions = [
       {

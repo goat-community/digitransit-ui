@@ -7,7 +7,11 @@ import inside from 'point-in-polygon';
 import { getCustomizedSettings } from '../store/localStorage';
 import { isInBoundingBox } from './geo-utils';
 import { addAnalyticsEvent } from './analyticsUtils';
-import { ExtendedRouteTypes, TransportMode } from '../constants';
+import {
+  ExtendedRouteTypes,
+  RoutingProfileOptions,
+  TransportMode,
+} from '../constants';
 
 export const isCitybikeSeasonActive = season => {
   if (!season) {
@@ -65,6 +69,18 @@ export const useCitybikes = networks => {
     citybikeRoutingIsActive(network),
   );
 };
+
+export const bikeDisabledProfiles = [
+  RoutingProfileOptions.Wheelchair,
+  RoutingProfileOptions.Rollator,
+  RoutingProfileOptions.Stroller,
+  RoutingProfileOptions.SevereWalkingDisability,
+];
+
+export const accessibilityDisabled = [
+  RoutingProfileOptions.Wheelchair,
+  RoutingProfileOptions.Stroller,
+];
 
 export const showCityBikes = networks => {
   if (!networks) {

@@ -5,41 +5,11 @@ import React from 'react';
 import { intlShape } from 'react-intl';
 import Icon from '../Icon';
 
-const roundToOneDecimal = number => {
-  const rounded = Math.round(number * 10) / 10;
-  return rounded.toFixed(1).replace('.', ',');
-};
-
-/**
- * Builds an array of options: least, default, most with preset
- * multipliers or given values for each option. Note: a higher value (relative to
- * the given value) means less/worse.
- *
- * @param {*} options The options to select from.
- */
-export const getThreeStepOptions = options => [
-  {
-    title: 'option-least',
-    value: options.least || options[0],
-    kmhValue: `${roundToOneDecimal(options[0] * 3.6)} km/h`,
-  },
-  {
-    title: 'option-default',
-    value: options[1],
-    kmhValue: `${roundToOneDecimal(options[1] * 3.6)} km/h`,
-  },
-  {
-    title: 'option-most',
-    value: options.most || options[2],
-    kmhValue: `${roundToOneDecimal(options[2] * 3.6)} km/h`,
-  },
-];
-
-export const getFiveStepOptionsNumerical = options => {
+export const getStepOptionsNumerical = options => {
   const numericalOptions = [];
   options.forEach(item => {
     numericalOptions.push({
-      title: `${Math.round(item * 3.6)} km/h`,
+      title: `${(item * 3.6).toFixed(1)} km/h`,
       value: item,
     });
   });
