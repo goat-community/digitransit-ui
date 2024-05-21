@@ -1258,7 +1258,7 @@ const translations = {
     'default': 'Standard',
     'wheelchair': 'Rollstuhl',
     'rollator': 'Rollator',
-    'slight-walking-disability': 'Leichtes Gehbehinderung',
+    'slight-walking-disability': 'Leichte Gehbehinderung',
     'moderate-walking-disability': 'Mittlere Gehbehinderung',
     'severe-walking-disability': 'Schwere Gehbehinderung',
     'stroller': 'Kinderwagen'
@@ -5314,7 +5314,7 @@ const translations = {
     'default': 'Standard',
     'wheelchair': 'Rollstuhl',
     'rollator': 'Rollator',
-    'slight-walking-disability': 'Leichtes Gehbehinderung',
+    'slight-walking-disability': 'Leichte Gehbehinderung',
     'moderate-walking-disability': 'Mittlere Gehbehinderung',
     'severe-walking-disability': 'Schwere Gehbehinderung',
     'stroller': 'Kinderwagen'
