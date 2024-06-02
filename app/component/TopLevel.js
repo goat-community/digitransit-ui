@@ -30,7 +30,6 @@ import MapLayersDialogContent from './MapLayersDialogContent';
 import PreferencesStore from '../store/PreferencesStore';
 import { hasSeenPopup, markPopupAsSeen } from '../store/localStorage';
 import { saveRoutingSettings } from '../action/SearchSettingsActions';
-import LogoSmall from './LogoSmall';
 
 class TopLevel extends React.Component {
   static propTypes = {
