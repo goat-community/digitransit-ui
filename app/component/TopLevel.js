@@ -6,6 +6,9 @@ import connectToStores from 'fluxible-addons-react/connectToStores';
 import { matchShape, routerShape } from 'found';
 import getContext from 'recompose/getContext';
 import Modal from '@hsl-fi/modal';
+import Select from 'react-select';
+import { intlShape } from 'react-intl';
+import { RoutingProfileDropDownOptions } from '../constants';
 import {
   getHomeUrl,
   PREFIX_STOPS,
@@ -26,6 +29,8 @@ import { addAnalyticsEvent } from '../util/analyticsUtils';
 import MapLayersDialogContent from './MapLayersDialogContent';
 import PreferencesStore from '../store/PreferencesStore';
 import { hasSeenPopup, markPopupAsSeen } from '../store/localStorage';
+import { saveRoutingSettings } from '../action/SearchSettingsActions';
+import LogoSmall from './LogoSmall';
 
 class TopLevel extends React.Component {
   static propTypes = {
@@ -48,6 +53,7 @@ class TopLevel extends React.Component {
     headers: PropTypes.object.isRequired,
     config: PropTypes.object.isRequired,
     executeAction: PropTypes.func.isRequired,
+    intl: intlShape.isRequired,
   };
 
   static defaultProps = {
@@ -115,6 +121,13 @@ class TopLevel extends React.Component {
     ).then(logo => {
       this.setState({ logo: logo.default });
     });
+    if (config.logoBlau) {
+      import(
+        /* webpackChunkName: "main" */ `../configurations/images/${this.context.config.logoBlau}`
+      ).then(logoBlau => {
+        this.setState({ logoBlau: logoBlau.default });
+      });
+    }
     if (config.logoSmall) {
       import(
         /* webpackChunkName: "main" */ `../configurations/images/${this.context.config.logoSmall}`
@@ -190,10 +203,9 @@ class TopLevel extends React.Component {
     );
 
     let content;
-
     let popup = [];
     const { welcomePopup } = this.context.config;
-    if (this.state.showPopup && welcomePopup.enabled) {
+    if (welcomePopup.enabled && this.state.showPopup) {
       popup = (
         <Modal
           appElement="#app"
@@ -204,15 +216,28 @@ class TopLevel extends React.Component {
             this.setState({ showPopup: false });
             markPopupAsSeen();
           }}
-          className="welcome-modal"
-          overlayClassName="map-routing-modal-overlay"
         >
-          <h2 className="welcome-modal-header">{welcomePopup.heading}</h2>
-          <div>
-            {welcomePopup.paragraphs.map(p => (
-              <p key="123">{p}</p>
-            ))}
-          </div>
+          <h2 className="welcome-modal-header">Willkommen bei KLNavi</h2>
+          <p>
+            Hierbei handelt es sich um eine individualisierbare Routenplanung
+            über eine Web-Anwendung, die eine breite Palette an Verkehrsmitteln
+            miteinbezieht sowie auf die ganz persönlichen Bedürfnisse und
+            Präferenzen der Nutzenden eingeht.
+          </p>
+          <h2>Routing-Profil auswählen</h2>
+          <Select
+            onChange={selectedOption => {
+              const { value } = selectedOption;
+              this.context.executeAction(saveRoutingSettings, {
+                routingProfile: value,
+                ...this.context.config.routingProfilesDefaultSettings[value],
+              });
+            }}
+            options={RoutingProfileDropDownOptions.map(option => ({
+              value: option.value,
+              label: this.context.intl.formatMessage({ id: option.title }),
+            }))}
+          />
         </Modal>
       );
     }
@@ -246,7 +271,6 @@ class TopLevel extends React.Component {
         />
       );
     }
-
     return (
       <Fragment>
         {!this.topBarOptions.hidden && (

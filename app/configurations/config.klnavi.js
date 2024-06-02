@@ -294,12 +294,15 @@ export default configMerger(walttiConfig, {
     meta: {
         description: APP_DESCRIPTION,
     },
-
+    welcomePopup: {
+        enabled: true
+    },
     modeToOTP: {
         carpool: 'CARPOOL',
     },
 
     logo: 'klnavi/herzlich_digital_logo.png',
+    logoBlau: 'klnavi/herzlich_digital_logo_blau.png',
     logoSmall: 'klnavi/herzlich_digital_logo.png',
 
     GTMid: '',

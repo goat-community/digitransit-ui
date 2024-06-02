@@ -118,6 +118,37 @@ export const RoutingProfileOptions = {
   Stroller: 'stroller',
 };
 
+export const RoutingProfileDropDownOptions = [
+  {
+    title: 'default',
+    value: RoutingProfileOptions.Standard,
+  },
+  {
+    title: 'wheelchair',
+    value: RoutingProfileOptions.Wheelchair,
+  },
+  {
+    title: 'rollator',
+    value: RoutingProfileOptions.Rollator,
+  },
+  {
+    title: 'slight-walking-disability',
+    value: RoutingProfileOptions.SlightWalkingDisability,
+  },
+  {
+    title: 'moderate-walking-disability',
+    value: RoutingProfileOptions.ModerateWalkingDisability,
+  },
+  {
+    title: 'severe-walking-disability',
+    value: RoutingProfileOptions.SevereWalkingDisability,
+  },
+  {
+    title: 'stroller',
+    value: RoutingProfileOptions.Stroller,
+  },
+];
+
 export const ExtendedRouteTypes = Object.freeze({
   BusExpress: 702,
   BusLocal: 704,
