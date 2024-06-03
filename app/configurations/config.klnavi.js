@@ -535,26 +535,11 @@ export default configMerger(walttiConfig, {
             }
         },
 
-        subway: {
-            availableForSelection: true,
-            defaultValue: true,
-            nearYouLabel: {
-                de: 'U-Bahnhaltestellen in der Nähe',
-            }
-        },
         airplane: {
             availableForSelection: false,
             defaultValue: false,
             nearYouLabel: {
                 de: 'Flughäfen in der Nähe',
-            }
-        },
-
-        ferry: {
-            availableForSelection: true,
-            defaultValue: true,
-            nearYouLabel: {
-                de: 'Fähranleger in der Nähe',
             }
         },
 
