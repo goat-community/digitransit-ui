@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { intlShape } from 'react-intl';
+import { matchShape, routerShape } from 'found';
 import SearchSettingsDropdown from './SearchSettingsDropdown';
 import {
   RoutingProfileOptions,
   RoutingProfileDropDownOptions,
 } from '../../constants';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
+import { replaceQueryParams } from '../../util/queryUtils';
 
 const RoutingProfileOptionsSection = (
   { currentSettings },
-  { intl, executeAction, config },
+  { intl, executeAction, config, router, match },
   currentSelection = currentSettings.routingProfile ||
     RoutingProfileOptions.Standard,
 ) => {
@@ -33,6 +35,10 @@ const RoutingProfileOptionsSection = (
             routingProfile: value,
             ...config.routingProfilesDefaultSettings[value],
           });
+          // Refresh the page to reset the search.
+          setTimeout(() => {
+            replaceQueryParams(router, match, {});
+          }, 100);
         }}
         options={RoutingProfileDropDownOptions}
         labelText={intl.formatMessage({ id: 'routing-profile' })}
@@ -52,6 +58,8 @@ RoutingProfileOptionsSection.contextTypes = {
   config: PropTypes.object.isRequired,
   executeAction: PropTypes.func.isRequired,
   intl: intlShape.isRequired,
+  router: routerShape.isRequired,
+  match: matchShape.isRequired,
 };
 
 export default RoutingProfileOptionsSection;
