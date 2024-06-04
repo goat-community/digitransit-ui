@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { intlShape, FormattedMessage } from 'react-intl';
+import { matchShape, routerShape } from 'found';
 
 import cx from 'classnames';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
@@ -12,10 +13,11 @@ import {
   getModes,
   toggleTransportMode,
 } from '../../util/modeUtils';
+import { replaceQueryParams } from '../../util/queryUtils';
 
 const TransportModesSection = (
   { config },
-  { executeAction },
+  { executeAction, router, match },
   transportModes = getAvailableTransportModes(config),
   modes = getModes(config),
 ) => {
@@ -74,11 +76,14 @@ const TransportModesSection = (
                 <Toggle
                   id={`settings-toggle-${mode}`}
                   toggled={modes.filter(o2 => o2 === mode).length > 0}
-                  onToggle={() =>
+                  onToggle={() => {
                     executeAction(saveRoutingSettings, {
                       modes: toggleTransportMode(mode, config),
-                    })
-                  }
+                    });
+                    setTimeout(() => {
+                      replaceQueryParams(router, match, {});
+                    }, 100);
+                  }}
                 />
               </label>
             </div>
@@ -95,6 +100,8 @@ TransportModesSection.propTypes = {
 TransportModesSection.contextTypes = {
   intl: intlShape.isRequired,
   executeAction: PropTypes.func.isRequired,
+  router: routerShape.isRequired,
+  match: matchShape.isRequired,
 };
 
 export default TransportModesSection;

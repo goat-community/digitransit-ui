@@ -2,9 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import uniqBy from 'lodash/uniqBy';
 import { intlShape } from 'react-intl';
+import { matchShape, routerShape } from 'found';
 import SearchSettingsDropdown from './SearchSettingsDropdown';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
+import { replaceQueryParams } from '../../util/queryUtils';
 
 class FareZoneSelector extends React.Component {
   static propTypes = {
@@ -16,6 +18,8 @@ class FareZoneSelector extends React.Component {
     config: PropTypes.object.isRequired,
     intl: intlShape.isRequired,
     executeAction: PropTypes.func.isRequired,
+    router: routerShape.isRequired,
+    match: matchShape.isRequired,
   };
 
   createFareZoneObjects = options => {
@@ -69,6 +73,9 @@ class FareZoneSelector extends React.Component {
               action: 'ChangeFareZones',
               name: value,
             });
+            setTimeout(() => {
+              replaceQueryParams(this.context.router, this.context.match, {});
+            }, 100);
           }}
           displayValueFormatter={value =>
             value.split(':')[1] ? value.split(':')[1] : value

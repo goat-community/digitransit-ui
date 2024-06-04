@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { matchShape, routerShape } from 'found';
 import Toggle from './Toggle';
 import Icon from '../Icon';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
 import BikingOptionsSection from './BikingOptionsSection';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
 import { bikeDisabledProfiles } from '../../util/modeUtils';
+import { replaceQueryParams } from '../../util/queryUtils';
 
 const StreetModeSelectorPanel = (
   { currentSettings, defaultSettings },
-  { config, executeAction },
+  { config, executeAction, router, match },
 ) => {
   const onToggle = (propName, eventName) => {
     const state = currentSettings[propName] ? 'Disable' : 'Enable';
@@ -22,6 +24,9 @@ const StreetModeSelectorPanel = (
     const action = {};
     action[propName] = !currentSettings[propName];
     executeAction(saveRoutingSettings, action);
+    setTimeout(() => {
+      replaceQueryParams(router, match, {});
+    }, 100);
   };
 
   const overrideStyle = config.separatedParkAndRideSwitch
@@ -176,6 +181,8 @@ StreetModeSelectorPanel.propTypes = {
 StreetModeSelectorPanel.contextTypes = {
   config: PropTypes.object.isRequired,
   executeAction: PropTypes.func.isRequired,
+  router: routerShape.isRequired,
+  match: matchShape.isRequired,
 };
 
 export default StreetModeSelectorPanel;

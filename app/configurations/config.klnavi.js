@@ -543,15 +543,6 @@ export default configMerger(walttiConfig, {
             }
         },
 
-        carpool: {
-            availableForSelection: true,
-            defaultValue: true,
-            nearYouLabel: {
-                de: 'Mitfahrpunkte in der Nähe',
-                en: 'Nearby carpool stops on the map',
-            }
-        },
-
         citybike: {
             availableForSelection: true,
             defaultValue: true,

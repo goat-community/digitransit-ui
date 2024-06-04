@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { matchShape, routerShape } from 'found';
 import Toggle from './Toggle';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
+import { replaceQueryParams } from '../../util/queryUtils';
 
 const TransferOptionsSection = (
   { defaultSettings, walkBoardCostHigh, currentSettings },
-  { executeAction },
+  { executeAction, router, match },
 ) => {
   const avoidTransfers =
     currentSettings.walkBoardCost !== defaultSettings.walkBoardCost;
@@ -34,6 +36,9 @@ const TransferOptionsSection = (
                 action: 'changeNumberOfTransfers',
                 name: avoidTransfers,
               });
+              setTimeout(() => {
+                replaceQueryParams(router, match, {});
+              }, 100);
             }}
             title="transfers"
           />
@@ -53,6 +58,8 @@ TransferOptionsSection.propTypes = {
 
 TransferOptionsSection.contextTypes = {
   executeAction: PropTypes.func.isRequired,
+  router: routerShape.isRequired,
+  match: matchShape.isRequired,
 };
 
 export default TransferOptionsSection;

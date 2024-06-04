@@ -35,7 +35,6 @@ const RoutingProfileOptionsSection = (
             routingProfile: value,
             ...config.routingProfilesDefaultSettings[value],
           });
-          // Refresh the page to reset the search.
           setTimeout(() => {
             replaceQueryParams(router, match, {});
           }, 100);

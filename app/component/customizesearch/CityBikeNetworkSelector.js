@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import xor from 'lodash/xor';
+import { matchShape, routerShape } from 'found';
 import Toggle from './Toggle';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
 import Icon from '../Icon';
@@ -13,10 +14,11 @@ import {
 } from '../../util/citybikes';
 import { getModes } from '../../util/modeUtils';
 import { TransportMode } from '../../constants';
+import { replaceQueryParams } from '../../util/queryUtils';
 
 const CityBikeNetworkSelector = (
   { currentOptions },
-  { config, getStore, executeAction },
+  { config, getStore, executeAction, router, match },
 ) => (
   <React.Fragment>
     {mapDefaultNetworkProperties(config).map(network => (
@@ -67,6 +69,9 @@ const CityBikeNetworkSelector = (
                 newSettings.modes = xor(modes, [TransportMode.Citybike]);
               }
               executeAction(saveRoutingSettings, newSettings);
+              setTimeout(() => {
+                replaceQueryParams(router, match, {});
+              }, 100);
             }}
           />
         </label>
@@ -81,6 +86,8 @@ CityBikeNetworkSelector.propTypes = {
 
 CityBikeNetworkSelector.contextTypes = {
   config: PropTypes.object.isRequired,
+  match: matchShape.isRequired,
+  router: routerShape.isRequired,
   getStore: PropTypes.func.isRequired,
   executeAction: PropTypes.func.isRequired,
 };

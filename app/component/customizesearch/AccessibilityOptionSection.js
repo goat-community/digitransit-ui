@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { matchShape, routerShape } from 'found';
 import Toggle from './Toggle';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
 import Icon from '../Icon';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
+import { replaceQueryParams } from '../../util/queryUtils';
 
 const AccessibilityOptionSection = (
   { currentSettings },
-  { config, executeAction },
+  { config, executeAction, router, match },
 ) => {
   const onToggle = () => {
     addAnalyticsEvent({
@@ -21,6 +23,9 @@ const AccessibilityOptionSection = (
     executeAction(saveRoutingSettings, {
       accessibilityOption: !currentSettings.accessibilityOption,
     });
+    setTimeout(() => {
+      replaceQueryParams(router, match, {});
+    }, 100);
   };
   const accessibilityOptionDisabled =
     config.accessibilityRoutingDisabled === true;
@@ -77,6 +82,8 @@ AccessibilityOptionSection.propTypes = {
 AccessibilityOptionSection.contextTypes = {
   config: PropTypes.object.isRequired,
   executeAction: PropTypes.func.isRequired,
+  router: routerShape.isRequired,
+  match: matchShape.isRequired,
 };
 
 export default AccessibilityOptionSection;

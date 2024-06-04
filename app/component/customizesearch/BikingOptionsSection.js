@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { matchShape } from 'found';
+import { matchShape, routerShape } from 'found';
 import { intlShape } from 'react-intl';
 import { saveRoutingSettings } from '../../action/SearchSettingsActions';
-
 import SearchSettingsDropdown, {
   getStepOptionsNumerical,
   valueShape,
@@ -11,6 +10,7 @@ import SearchSettingsDropdown, {
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
 import { findNearestOption } from '../../util/planParamUtil';
 import { BicycleParkingFilter } from '../../constants';
+import { replaceQueryParams } from '../../util/queryUtils';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class BikingOptionsSection extends React.Component {
@@ -66,6 +66,9 @@ class BikingOptionsSection extends React.Component {
               action: 'ChangeBicycleParkingFilter',
               name: value,
             });
+            setTimeout(() => {
+              replaceQueryParams(this.context.router, this.context.match, {});
+            }, 100);
           }}
           options={parkingOptions}
           formatOptions
@@ -85,6 +88,9 @@ class BikingOptionsSection extends React.Component {
               action: 'ChangeBikingSpeed',
               name: value,
             });
+            setTimeout(() => {
+              replaceQueryParams(this.context.router, this.context.match, {});
+            }, 100);
           }}
           options={options}
           formatOptions
@@ -110,6 +116,7 @@ BikingOptionsSection.propTypes = {
 
 BikingOptionsSection.contextTypes = {
   match: matchShape.isRequired,
+  router: routerShape.isRequired,
   intl: intlShape.isRequired,
   executeAction: PropTypes.func.isRequired,
 };
