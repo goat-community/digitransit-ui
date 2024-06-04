@@ -2576,9 +2576,10 @@ class SummaryPage extends React.Component {
     // NOTE: here, in contrast to HSL, we don't inspect config and ignore most settings,
     // as these already should have been respected in the request
     const showBikeAndPublicOptionButton =
-      bikeAndPublicPlanHasItineraries ||
-      bikeRentAndPublicPlanHasItineraries ||
-      bikeParkPlanHasItineraries;
+      !currentSettings.accessibilityOption &&
+      (bikeAndPublicPlanHasItineraries ||
+        bikeRentAndPublicPlanHasItineraries ||
+        bikeParkPlanHasItineraries);
 
     const hasCarItinerary = !isEmpty(get(carPlan, 'itineraries'));
     const showCarOptionButton =
