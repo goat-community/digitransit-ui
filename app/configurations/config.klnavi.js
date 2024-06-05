@@ -635,6 +635,14 @@ export default configMerger(walttiConfig, {
                 url: '/assets/geojson/klnavi_boundary.geojson',
                 isOffByDefault: false,
             },
+            {
+                name: {
+                    en: 'Kaiserslautern Car-Sharing Stations',
+                    de: 'Kaiserslautern Car-Sharing Stations',
+                },
+                url: '/assets/geojson/kaiserslautern_carsharing_stations.geojson',
+                isOffByDefault: false,
+            },
 
         ],
     },

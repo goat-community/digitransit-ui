@@ -1,0 +1,253 @@
+{
+    "type": "FeatureCollection",
+    "name": "carsharing",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing",
+                    "svg": "<svg width='25' height='25' viewBox='0 0 25 25' version='1.1' id='svg5' inkscape:version='1.1.2 (0a00cf5339, 2022-02-04)' sodipodi:docname='carsharing.svg' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'><sodipodi:namedview id='namedview7' pagecolor='#ffffff' bordercolor='#666666' borderopacity='1.0' inkscape:pageshadow='2' inkscape:pageopacity='0.0' inkscape:pagecheckerboard='0' inkscape:document-units='mm' showgrid='false' inkscape:zoom='6.0150393' inkscape:cx='16.126246' inkscape:cy='59.517483' inkscape:window-width='1846' inkscape:window-height='1043' inkscape:window-x='1994' inkscape:window-y='195' inkscape:window-maximized='1' inkscape:current-layer='layer1' /><defs id='defs2' /><g inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1'><ellipse style='fill:#fbc606;stroke-width:0.0996715' id='path846' cx='12.544745' cy='12.396113' rx='12.427817' ry='12.363535' /><path fill='currentColor' d='M 16.445977,3.3744765 A 1.3323809,1.3323809 0 0 0 15.113595,4.7068576 H 5.1207374 v 1.3323809 l 1.3323812,1.3323809 1.3323808,-1.3323809 1.3323808,1.3323809 1.3323818,-1.3323809 1.33238,1.3323809 h 3.330953 a 1.3323809,1.3323809 0 0 0 1.332382,1.3323808 h 2.664762 A 0.66619046,0.66619046 0 0 0 19.776928,8.0378097 V 4.0406669 A 0.66619046,0.66619046 0 0 0 19.110739,3.3744765 Z m 0.66619,1.9985716 a 0.66619073,0.66619073 0 0 1 1.332381,0 V 6.705429 a 0.66619073,0.66619073 0 0 1 -1.332381,0 z M 5.3152651,14.505188 a 0.66619046,0.66619046 0 0 0 -0.194528,0.47033 v 5.053718 a 0.66619046,0.66619046 0 0 0 0.6661907,0.666188 h 1.9985716 a 0.66619046,0.66619046 0 0 0 0.6661904,-0.666188 v -0.666192 h 7.9942872 v 0.666192 a 0.66619046,0.66619046 0 0 0 0.66619,0.666188 h 1.998572 a 0.66619046,0.66619046 0 0 0 0.666189,-0.666188 V 14.975518 A 0.66619046,0.66619046 0 0 0 19.5824,14.505188 L 18.444548,13.367334 16.640504,10.360149 A 0.66619046,0.66619046 0 0 0 16.06758,10.036381 H 8.8300859 A 0.66619046,0.66619046 0 0 0 8.2584944,10.360149 L 6.4531186,13.367334 Z M 17.290704,14.033525 H 7.60696 l 1.5988575,-2.664763 h 6.4860305 z m -7.5066334,2.435592 v 0.495642 A 0.39971429,0.39971429 0 0 1 9.3843564,17.364472 H 6.8528325 A 0.39971429,0.39971429 0 0 1 6.4531186,16.964759 v -1.111201 a 0.39971429,0.39971429 0 0 1 0.4783243,-0.391722 l 2.4249333,0.484988 a 0.53295237,0.53295237 0 0 1 0.4276944,0.522293 m 8.6604774,-0.453009 v 0.948651 a 0.39971429,0.39971429 0 0 1 -0.399715,0.399713 h -2.531524 a 0.39971429,0.39971429 0 0 1 -0.399714,-0.399713 v -0.604898 a 0.39971429,0.39971429 0 0 1 0.321102,-0.391717 l 2.37164,-0.474331 a 0.53295237,0.53295237 0 0 1 0.638211,0.522295' id='path1032' style='fill:#ffffff;stroke-width:1.33238' /></g></svg>"
+                },
+                "name": "Logenstr. / Trippstadter Str.",
+                "street": "Trippstadter Straße",
+                "housenumber": "27",
+                "zipcode": "67663",
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7763-49436-car_sharing-0001",
+                "id": 1711070
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.763333,
+                    49.436222
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing"
+                },
+                "name": "Balbierstr. 9",
+                "street": "Balbierstr.",
+                "housenumber": "9",
+                "zipcode": "67663",
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7760-49432-car_sharing-0001",
+                "id": 1711078
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.759713,
+                    49.431964
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing"
+                },
+                "name": "TSG / Hermann-Löns-Str.",
+                "street": "Hermann-Löns-Straße",
+                "housenumber": "25",
+                "zipcode": "67663",
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7758-49429-car_sharing-0001",
+                "id": 1711169
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.757570744,
+                    49.4285469
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing"
+                },
+                "name": "Trippstadter Str. 110",
+                "street": "Trippstadter Straße",
+                "housenumber": "110",
+                "zipcode": "67663",
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7754-49432-car_sharing-0001",
+                "id": 1711170
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.754104,
+                    49.432385
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing"
+                },
+                "name": "Rathaus, Maxstr. 17",
+                "street": "Maxstraße",
+                "housenumber": "17",
+                "zipcode": "67659",
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7767-49447-car_sharing-0001",
+                "id": 1711183
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.766778,
+                    49.446526
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing"
+                },
+                "name": "Rosenstr. 17",
+                "street": "Rosenstr. ",
+                "housenumber": "15",
+                "zipcode": "67655",
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7765-49442-car_sharing-0001",
+                "id": 1711143
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.765356,
+                    49.442216
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing"
+                },
+                "name": "Station: Hbf Kaiserslautern - Hbf Kaiserslautern",
+                "street": null,
+                "housenumber": null,
+                "zipcode": null,
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7768-49436-car_sharing-0001",
+                "id": 1749780
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.767500281333923,
+                    49.435967457348127
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing"
+                },
+                "name": "Bahnhof Bahnhofstr. 22",
+                "street": "Bahnhofstr.",
+                "housenumber": "22",
+                "zipcode": "67655",
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7770-49437-car_sharing-0001",
+                "id": 1711069
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.770156,
+                    49.436694
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing"
+                },
+                "name": "Gasstr. 19",
+                "street": "Gasstraße",
+                "housenumber": "19",
+                "zipcode": "67655",
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7775-49443-car_sharing-0001",
+                "id": 1711154
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.774771,
+                    49.443148
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "category": "car_sharing",
+                "icon": {
+                    "id": "carsharing"
+                },
+                "name": "Birnstr. 3 / Kennedyplatz",
+                "street": "Birnstraße",
+                "housenumber": "3",
+                "zipcode": "67655",
+                "opening_hours": null,
+                "wheelchair": null,
+                "uid": "7780-49443-car_sharing-0001",
+                "id": 1711156
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.779784,
+                    49.442867
+                ]
+            }
+        }
+    ]
+}
