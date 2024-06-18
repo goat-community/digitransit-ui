@@ -8,6 +8,7 @@ import getContext from 'recompose/getContext';
 import Modal from '@hsl-fi/modal';
 import Select from 'react-select';
 import { intlShape } from 'react-intl';
+// import styles from '@digitransit-component/digitransit-component-favourite-modal/src/helpers/
 import { RoutingProfileDropDownOptions } from '../constants';
 import {
   getHomeUrl,
@@ -237,6 +238,23 @@ class TopLevel extends React.Component {
               label: this.context.intl.formatMessage({ id: option.title }),
             }))}
           />
+          <div
+            className={cx(
+              'route-type-preference-confirm-container',
+              this.isMobile() && 'mobile',
+            )}
+          >
+            <button
+              type="button"
+              className={cx('favourite-modal-desktop-button')}
+              onClick={() => {
+                this.setState({ showPopup: false });
+                markPopupAsSeen();
+              }}
+            >
+              Bestätigen
+            </button>
+          </div>
         </Modal>
       );
     }

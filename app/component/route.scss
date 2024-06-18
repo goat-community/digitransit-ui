@@ -1470,3 +1470,14 @@ nav.top-bar .title .route-number {
   display: flex;
   flex-direction: column;
 }
+
+.route-type-preference-confirm-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  margin-bottom: -40px;
+  margin-right: -50px;
+  &.mobile {
+    margin-right: 0px
+  }
+}
