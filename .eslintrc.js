@@ -34,6 +34,7 @@ module.exports = {
     'react/sort-comp': 'off',
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
+    'no-underscore-dangle': ['error', { 'allow': ['__id'] }],
 
     // jsx-a11y
     'jsx-a11y/anchor-is-valid': [
