@@ -18,7 +18,6 @@ const STATIC_MESSAGE_URL =
 
 const walttiConfig = require('./config.waltti.js').default;
 
-
 const minLat = 48.966571;
 const maxLat = 49.900007;
 const minLon = 7.2464377;
