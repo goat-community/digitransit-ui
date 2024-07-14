@@ -49,7 +49,7 @@ export const StreetModeSelector = ({
           />
           {showWalkOptionButton && (
             <StreetModeSelectorButton
-              icon="icon-icon_walk"
+              icon={!walkPlan.__id.includes('wheelchair:true') && "icon-icon_walk" || "icon-icon_wheelchair"}
               name="walk"
               plan={walkPlan}
               onClick={setStreetModeAndSelect}

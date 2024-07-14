@@ -83,6 +83,8 @@ export default configMerger(walttiConfig, {
         safetyFactor: 0.4,
         slopeFactor: 0.3,
         timeFactor: 0.3,
+        walkBoardCost: null,
+        walkReluctance: null,
         includeParkAndRideSuggestions: true,
         includeCarSuggestions: true,
     },

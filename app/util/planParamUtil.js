@@ -365,8 +365,7 @@ export const preparePlanParams = (config, useDefaultModes) => (
     ticketTypes,
     modeWeight: config.customWeights,
     allowedVehicleRentalNetworks: allowedVehicleRentalNetworksMapped,
-    shouldMakeWalkQuery:
-      !wheelchair && linearDistance < config.suggestWalkMaxDistance,
+    shouldMakeWalkQuery: linearDistance < config.suggestWalkMaxDistance,
     shouldMakeBikeQuery:
       !wheelchair &&
       linearDistance < config.suggestBikeMaxDistance &&

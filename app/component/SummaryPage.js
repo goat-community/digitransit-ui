@@ -2542,7 +2542,6 @@ class SummaryPage extends React.Component {
       walkPlan &&
         walkPlan.itineraries &&
         walkPlan.itineraries.length > 0 &&
-        !currentSettings.accessibilityOption &&
         itineraryWalkDistance < this.context.config.suggestWalkMaxDistance,
     );
 
