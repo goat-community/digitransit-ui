@@ -473,6 +473,24 @@ export default config => {
         }
       />
       <Route
+        path="/impressum"
+        getComponent={() =>
+          import(
+            /* webpackChunkName: "impressum" */ './component/Impressum'
+          ).then(getDefault)
+        }
+      />
+
+      <Route
+        path="/datenschutzerklaerung"
+        getComponent={() =>
+          import(
+            /* webpackChunkName: "datenschutzerklaerung" */ './component/Datenschutzerklaerung'
+          ).then(getDefault)
+        }
+      />
+
+      <Route
         path={config.URL.EMBEDDED_SEARCH_GENERATION}
         getComponent={() =>
           import(
