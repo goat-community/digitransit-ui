@@ -21,7 +21,8 @@ const DatenschutzerklaerungPage = ({ currentLanguage }, { config }) => {
               {section.paragraphs &&
                 section.paragraphs.map((p, j) => (
                   // eslint-disable-next-line react/no-danger
-                  <p
+                  <div
+                    className="datenschutz-div"
                     dangerouslySetInnerHTML={{ __html: p }}
                     key={`datenschutzerklaerung-section-${i}-p-${j}`}
                   />
