@@ -465,7 +465,7 @@ export default configMerger(walttiConfig, {
                     'Sie betreiben ein Mobilitätsangebot in Kaiserslautern und haben es noch nicht in KL.Navi gefunden? Dann freuen wir uns über Ihre Nachricht. Statistische und Echtzeit-Informationen, die als offene Daten vorliegen, binden wir gerne ein.',
                     'Sie nutzen ein Mobilitätsangebot in Brandenburg (z.B. einen Bürgerbus oder ein Fahrrad- oder Carsharing-Angebot) und finden es nicht in KL.Navi? Dann freuen wir uns über Ihre Hinweise und gucken dann, ob wir es in KL.Navi einbinden können.',
                     'Sie möchten zum Mitmacher werden und wünschen mehr Informationen?',
-                    'Schreiben Sie uns eine E-mail an lotse@kaiserslautern.de',
+                    'Schreiben Sie uns eine E-mail an <a href=mailto:lotse@kaiserslautern.de>lotse@kaiserslautern.de</a>.',
                 ]
             },
             {
