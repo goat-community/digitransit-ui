@@ -464,6 +464,16 @@ export default config => {
           ),
         }}
       </Route>
+
+      <Route
+        path="/feedback"
+        getComponent={() =>
+          import(
+            /* webpackChunkName: "feedback" */ './component/Feedback'
+          ).then(getDefault)
+        }
+      />
+
       <Route
         path="/dieser-dienst"
         getComponent={() =>
