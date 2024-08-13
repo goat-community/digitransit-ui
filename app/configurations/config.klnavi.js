@@ -140,7 +140,7 @@ export default configMerger(walttiConfig, {
     modesWithNoBike: ['BICYCLE_RENT', 'WALK', 'CARPOOL', 'FLEX_DIRECT', 'FLEX_ACCESS', 'FLEX_EGRESS'],
     appBarLink: {
         name: 'Feedback',
-        href: 'https://klnavi.de/feedback',
+        href: '/feedback',
         target: '_blank'
     },
     contactName: {
@@ -433,6 +433,24 @@ export default configMerger(walttiConfig, {
         ]
     },
 
+    feedback: {
+        de: [
+            {
+                header: 'Feedback',
+                paragraphs: [
+                    'Sie haben Feedback oder Anregungen zum KL.Navi? Wir freuen uns über Ihre Nachricht! Schreiben Sie uns eine E-Mail an <a href=mailto:lotse@kaiserslautern.de>lotse@kaiserslautern.de</a>.'
+                ]
+            }
+        ],
+        en: [
+            {
+                header: 'Feedback',
+                paragraphs: [
+                    'Do you have feedback or suggestions for KL.Navi? We look forward to your message! Write us an email at <a href=mailto:lotse@kaiserslautern.de>lotse@kaiserslautern.de</a>!'
+                ]
+            }
+        ]
+    },
     aboutThisService: {
         de: [
             {
@@ -447,7 +465,7 @@ export default configMerger(walttiConfig, {
                     'Sie betreiben ein Mobilitätsangebot in Kaiserslautern und haben es noch nicht in KL.Navi gefunden? Dann freuen wir uns über Ihre Nachricht. Statistische und Echtzeit-Informationen, die als offene Daten vorliegen, binden wir gerne ein.',
                     'Sie nutzen ein Mobilitätsangebot in Brandenburg (z.B. einen Bürgerbus oder ein Fahrrad- oder Carsharing-Angebot) und finden es nicht in KL.Navi? Dann freuen wir uns über Ihre Hinweise und gucken dann, ob wir es in KL.Navi einbinden können.',
                     'Sie möchten zum Mitmacher werden und wünschen mehr Informationen?',
-                    'Schreiben Sie uns eine E-mail an vorname.nachname@kaiserslautern.de',
+                    'Schreiben Sie uns eine E-mail an <a href=mailto:lotse@kaiserslautern.de>lotse@kaiserslautern.de</a>.',
                 ]
             },
             {
