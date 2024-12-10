@@ -75,6 +75,7 @@ export const bikeDisabledProfiles = [
   RoutingProfileOptions.Rollator,
   RoutingProfileOptions.Stroller,
   RoutingProfileOptions.SevereWalkingDisability,
+  RoutingProfileOptions.VisualImpairment,
 ];
 
 export const accessibilityDisabled = [

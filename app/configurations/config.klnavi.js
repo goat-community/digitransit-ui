@@ -6,7 +6,7 @@ const CONFIG = 'klnavi';
 const APP_TITLE = 'KLNavi';
 const HEADER_TITLE = 'KLNavi';
 const APP_DESCRIPTION = 'Mobilitätsplattform für die Stadt Kaiserslautern';
-const API_URL = process.env.API_URL || 'https://api.klnavi.de';
+const API_URL = 'https://routing.klnavi.de/pedestrian/standard';
 const DATAHUB_TILES_URL = process.env.DATAHUB_TILES_URL || 'https://tiles.bbnavi.de';
 // const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
 const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.stadtnavi.eu/satellite-overlay/{z}/{x}/{y}{r}.png";
@@ -128,6 +128,13 @@ export default configMerger(walttiConfig, {
             includeBikeSuggestions: false,
             showBikeAndParkItineraries: false,
         },
+        'visual-impairment': {
+            walkSpeed: 0.8,
+            accessibilityOption: true,
+            includeBikeSuggestions: false,
+            showBikeAndParkItineraries: false,
+            otpUrl: "https://routing.klnavi.de/pedestrian/vision-impaired/otp/routers/default/"
+        }
     },
     // TODO shouldn't boolean be reversed? See https://github.com/HSLdevcom/digitransit-ui/pull/4648#discussion_r1121671721 
     separatedParkAndRideSwitch: false,

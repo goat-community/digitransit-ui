@@ -115,6 +115,7 @@ export const RoutingProfileOptions = {
   SlightWalkingDisability: 'slight-walking-disability',
   ModerateWalkingDisability: 'moderate-walking-disability',
   SevereWalkingDisability: 'severe-walking-disability',
+  VisualImpairment: 'visual-impairment',
   Stroller: 'stroller',
 };
 
@@ -142,6 +143,10 @@ export const RoutingProfileDropDownOptions = [
   {
     title: 'severe-walking-disability',
     value: RoutingProfileOptions.SevereWalkingDisability,
+  },
+  {
+    title: 'visual-impairment',
+    value: RoutingProfileOptions.VisualImpairment,
   },
   {
     title: 'stroller',

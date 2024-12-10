@@ -44,6 +44,7 @@ import {
   initAnalyticsClientSide,
   addAnalyticsEvent,
 } from './util/analyticsUtils';
+import { getCustomizedSettings } from './store/localStorage';
 
 const plugContext = f => () => ({
   plugComponentContext: f,
@@ -85,6 +86,16 @@ const getParams = query => {
     }, {});
 };
 
+const getOtpUrl = queryParameters => {
+  const custSettings = getCustomizedSettings();
+  const selectedProfile = custSettings.routingProfile || 'default';
+  const otpUrl =
+    config.routingProfilesDefaultSettings?.[selectedProfile]?.otpUrl ||
+    config.URL.OTP;
+
+  return `${otpUrl}index/graphql${queryParameters}`;
+};
+
 async function init() {
   // Guard againist Samsung et.al. which are not properly polyfilled by polyfill-service
   if (typeof window.Intl === 'undefined') {
@@ -105,7 +116,6 @@ async function init() {
   const context = await app.rehydrate(window.state);
 
   window.context = context;
-
   // For Google Tag Manager
   initAnalyticsClientSide();
 
@@ -152,8 +162,7 @@ async function init() {
       ttl: 60 * 60 * 1000,
     }), */
     urlMiddleware({
-      url: () =>
-        Promise.resolve(`${config.URL.OTP}index/graphql${queryParameters}`),
+      url: () => getOtpUrl(queryParameters),
     }),
     errorMiddleware(),
     retryMiddleware({
