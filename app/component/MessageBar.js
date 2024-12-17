@@ -293,29 +293,27 @@ class MessageBar extends Component {
               className="message-icon"
             />
             <div className={`message-bar-content message-bar-${type}`}>
-              <div>
-                <div className="message-bar-container">
-                  <div
-                    style={{
-                      background: isDisruption ? 'inherit' : backgroundColor,
-                    }}
-                  >
-                    {this.validMessages().length > 1 ? (
-                      <SwipeableTabs
-                        tabIndex={index}
-                        tabs={this.getTabContent(textColor, slideIndex)}
-                        onSwipe={this.onSwipe}
-                        hideArrows={this.props.breakpoint !== 'large'}
-                        navigationOnBottom
-                        ariaFrom="swipe-message-bar"
-                        ariaFromHeader="swipe-message-bar-header"
-                      />
-                    ) : (
-                      <div className="single-alert">
-                        {this.getTabContent(textColor, slideIndex)}
-                      </div>
-                    )}
-                  </div>
+              <div className="message-bar-container">
+                <div
+                  style={{
+                    background: isDisruption ? 'inherit' : backgroundColor,
+                  }}
+                >
+                  {this.validMessages().length > 1 ? (
+                    <SwipeableTabs
+                      tabIndex={index}
+                      tabs={this.getTabContent(textColor, slideIndex)}
+                      onSwipe={this.onSwipe}
+                      hideArrows={this.props.breakpoint !== 'large'}
+                      navigationOnBottom
+                      ariaFrom="swipe-message-bar"
+                      ariaFromHeader="swipe-message-bar-header"
+                    />
+                  ) : (
+                    <div className="single-alert">
+                      {this.getTabContent(textColor, slideIndex)}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

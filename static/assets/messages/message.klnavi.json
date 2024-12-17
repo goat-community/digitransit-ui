@@ -4,20 +4,12 @@
         "content": {
           "en": [
             {
-              "content": "This is a test version (public beta)!",
-              "type": "heading"
-            },
-            {
               "type": "a",
               "content": "More info about the pilot project",
               "href": "https://www.herzlich-digital.de/projekte/klnavi/"
             }
           ],
           "de": [
-            {
-              "content": "Diese Testversion ist im Aufbau (public beta)",
-              "type": "heading"
-            },
             {
               "type": "a",
               "content": "Mehr Infos zum Pilotprojekt",

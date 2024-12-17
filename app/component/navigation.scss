@@ -730,6 +730,8 @@ section.content {
     overflow: hidden;
 
     .message-bar-content {
+      display: flex;
+      align-items: center;
       flex-basis: auto;
       flex-grow: 1;
       width: 60%;
